@@ -40,6 +40,25 @@
     width: 26px
 }
 
+.social-icons a.call-to-action {
+    background: var(--primary);
+    color: var(--theme);
+    display: inline-block;
+    border-radius: 80px;
+    font-size: 16px;
+    /* font-weight: bold; */
+    line-height: 26px;
+    vertical-align: top;
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
+.social-icons a.call-to-action svg {
+    vertical-align: bottom;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
 code {
     direction: ltr;
 }

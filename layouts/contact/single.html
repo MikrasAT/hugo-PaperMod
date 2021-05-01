@@ -1,0 +1,21 @@
+{{- define "main" }}
+<script src="https://www.google.com/recaptcha/api.js?render=6LfuVbwaAAAAAKK8zxYBhWciRxKPrjynHYsnd8tM"></script>
+<script>
+grecaptcha.ready(function() {
+    grecaptcha.execute('6LfuVbwaAAAAAKK8zxYBhWciRxKPrjynHYsnd8tM').then(function(token) {
+       // send token as _recaptcha with the rest of the form
+       // this can be done by appending a hidden input to the form
+       // or sending programatically using the Fetch API or similar
+    });
+});
+</script>
+<form action="https://apigatewayurl.com" method="post">
+    <input type="hidden" name="_to" value="johndoe@example.com">
+    <label for="text">Deine Nachricht</label>
+    <input type="text" name="message" id="text">
+    <label for="email">Deine E-Mail Adresse</label>
+    <input type="email" name="_replyto" id="email">
+    <input type="hidden" name="_recaptcha">
+    <input type="submit" value="send" >
+</form>
+{{- end }}{{/* end main */ -}}

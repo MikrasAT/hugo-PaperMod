@@ -1,7 +1,14 @@
 <div class="social-icons">
     {{- range . }}
-    <a href="{{ trim .url " " }}" target="_blank" rel="noopener noreferrer me" title="{{ .name | humanize }}">
-        {{ partial "svg.html" . }}
-    </a>
+        {{ if .IsCallToAction }}
+            <a href="{{ trim .url " " }}" class="call-to-action" target="_blank" rel="noopener noreferrer me" title="{{ .name | humanize }}">
+                {{ partial "svg.html" . }}
+                {{ .name }}
+            </a>
+        {{ else }}
+            <a href="{{ trim .url " " }}" target="_blank" rel="noopener noreferrer me" title="{{ .name | humanize }}">
+                {{ partial "svg.html" . }}
+            </a>
+        {{ end }}
     {{- end }}
 </div>
